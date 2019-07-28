@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Meeting:</strong>
+  <%= @meeting_entry.meeting_id %>
+</p>
+
+<p>
+  <strong>Family name:</strong>
+  <%= @meeting_entry.family_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @meeting_entry.first_name %>
+</p>
+
+<p>
+  <strong>Family kana:</strong>
+  <%= @meeting_entry.family_kana %>
+</p>
+
+<p>
+  <strong>First kana:</strong>
+  <%= @meeting_entry.first_kana %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @meeting_entry.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @meeting_entry.email %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @meeting_entry.purpose %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @meeting_entry.note %>
+</p>
+
+<p>
+  <strong>Agreement:</strong>
+  <%= @meeting_entry.agreement %>
+</p>
+
+<%= link_to 'Edit', edit_meeting_entry_path(@meeting_entry) %> |
+<%= link_to 'Back', meeting_entries_path %>
