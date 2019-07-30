@@ -1,0 +1,70 @@
+<%= form_with(model: meeting_entry, local: true) do |form| %>
+  <% if meeting_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meeting_entry.errors.count, "error") %> prohibited this meeting_entry from being saved:</h2>
+
+      <ul>
+      <% meeting_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<label><%= form.radio_button :datetime, "0801" %> 0801</label>
+<label><%= form.radio_button :datetime, "0808" %> 0808</label>
+
+  <div class="field">
+    <%= form.label :meeting_id %>
+    <%= form.text_field :meeting_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_name %>
+    <%= form.text_field :family_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_kana %>
+    <%= form.text_field :family_kana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_kana %>
+    <%= form.text_field :first_kana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purpose %>
+    <%= form.text_area :purpose %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_area :note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agreement %>
+    <%= form.check_box :agreement %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

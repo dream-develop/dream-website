@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meeting: one
+  family_name: MyString
+  first_name: MyString
+  family_kana: MyString
+  first_kana: MyString
+  phone: MyString
+  email: MyString
+  purpose: MyText
+  note: MyText
+  agreement: false
+
+two:
+  meeting: two
+  family_name: MyString
+  first_name: MyString
+  family_kana: MyString
+  first_kana: MyString
+  phone: MyString
+  email: MyString
+  purpose: MyText
+  note: MyText
+  agreement: false
