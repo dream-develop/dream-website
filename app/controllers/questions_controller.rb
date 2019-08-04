@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   def complete
   end
 
-  def agreement
+  def approval
   end
 
   # GET /questions/1
