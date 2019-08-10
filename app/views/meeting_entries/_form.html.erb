@@ -10,73 +10,148 @@
       </ul>
     </div>
   <% end %>
-
-<!-- <body>
-    <%# <%= @meetings[0]['datetime'] %> %>
-</body> -->
-
-<% @meetings.each do |t|  %>
-  <% if t.status == 10 %>
-    <label><%= check_box "temp",t.datetime.strftime("%Y年%-m月%-d日 %-H時%-M分")%><%= t.datetime.strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
-  <% else %>
-    <label><%= check_box "temp",t.datetime.strftime("%Y年%-m月%-d日 %-H時%-M分") , :disabled => true%><del><%= t.datetime.strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
-  <% end %>
-  <br>
-<% end %>
-
-
-  <%# <% M.each do |t|  %> %>
-     <%# <%= t.meeting.datetime%> %>
-  <%# <% end %> %>
-
-  <div class="field">
-    <%= form.label :family_name %>
-    <%= form.text_field :family_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :family_kana %>
-    <%= form.text_field :family_kana %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_kana %>
-    <%= form.text_field :first_kana %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :purpose %>
-    <%= form.text_area :purpose %>
-  </div>
-
-  <div class="field">
-    <%= form.label :note %>
-    <%= form.text_area :note %>
-  </div>
+<div class="all">
+<div class="body">
+  <div class="entry"><h1>説明会予約</h1></div>
+  <p class="comment">※は必須項目です。必ずチェックまたはご記入ください。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>
+        <p class="kome">※</p>
+        <p class="title">説明会日程</p>
+        </th>
+        <td>
+          <div class="date">
+            <% if @meetings[0]['status'] == 10 %>
+              <label><%= check_box "temp", "@meetings[0]['datetime']" %><%= @meetings[0]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
+            <% else %>
+              <label><%= check_box "temp", "@meetings[0]['datetime']" , :disabled => true, :checked_value => "true", :unchecked_value => "false"%><del><%= @meetings[0]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
+            <% end %>
+            <br>
 
 
-  <div class="field">
-    <%= form.check_box :agreement %>
-    <%= link_to 'agreement', :controller => "meeting_entries", :action => "approval" %>
-     <%# meeting_entries_path %> %>
-  </div>
+            <% if @meetings[1]['status'] == 10 %>
+              <label><%= check_box "temp", "@meetings[1]['datetime']" %><%= @meetings[1]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
+            <% else %>
+              <label><%= check_box "temp", "@meetings[1]['datetime']" , :disabled => true%><del><%= @meetings[1]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
+            <% end %>
+            <br>
 
+            <% if @meetings[2]['status'] == 10 %>
+              <label><%= check_box "temp", "@meetings[2]['datetime']" %><%= @meetings[2]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
+            <% else %>
+              <label><%= check_box "temp", "@meetings[2]['datetime']" , :disabled => true%><del><%= @meetings[2]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
+            <% end %>
+            <br>
+
+            <% if @meetings[3]['status'] == 10 %>
+              <label><%= check_box "temp", "@meetings[3]['datetime']" %><%= @meetings[3]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
+            <% else %>
+              <label><%= check_box "temp", "@meetings[3]['datetime']" , :disabled => true%><del><%= @meetings[3]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
+            <% end %>
+            <br>
+
+            <% if @meetings[4]['status'] == 10 %>
+              <label><%= check_box "temp", "@meetings[4]['datetime']" %><%= @meetings[4]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
+            <% else %>
+              <label><%= check_box "temp", "@meetings[4]['datetime']" , :disabled => true%><del><%= @meetings[4]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
+            <% end %>
+            <br>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">お名前</p>
+        </th>
+        <td>
+          <div class="family_name">
+            <%= form.label :　姓 %>
+            <%= form.text_field :family_name %>
+          </div>
+          <div class="first_name">
+            <%= form.label :　名 %>
+            <%= form.text_field :first_name %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">フリガナ</p>
+        </th>
+        <td>
+          <div class="family_kana">
+            <%= form.label :セイ %>
+            <%= form.text_field :family_kana %>
+          </div>
+          <div class="first_kana">
+            <%= form.label :メイ %>
+            <%= form.text_field :first_kana %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">ご連絡先TEL(半角数字)</p>
+        </th>
+        <td>
+          <div class="tel">
+            <%= form.label :　　 %>
+            <%= form.text_field :phone %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">メールアドレス</p>
+        </th>
+        <td>
+          <div class="mail">
+            <%= form.label :　　 %>
+            <%= form.text_field :email %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>目的</th>
+        <td>
+          <div class="purpose">
+            <%= form.label :　　 %>
+            <%= form.text_area :purpose %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>備考</th>
+        <td>
+          <div class="note">
+            <%= form.label :　　 %>
+            <%= form.text_area :note %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">利用規約</p>
+        </th>
+        <td>
+          <div class="agreement">
+            <%= form.check_box :agreement %>
+            <%= link_to '利用規約の確認', :controller => "meeting_entries", :action => "agreement" %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "送信", class:"submit"%>
   </div>
+</div>
+</div>
 <% end %>

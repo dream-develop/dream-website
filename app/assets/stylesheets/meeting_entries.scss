@@ -1,3 +1,105 @@
 // Place all the styles related to the meeting_entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.meeting_entries{
+.all{
+  background-color: rgb(247, 247, 247);
+  margin: 0;
+  padding: 0;
+}
+
+.body{
+  width:80%;
+  margin: 0 auto;
+  // background-color: #E0E6F8;
+  .kome{
+    display: inline-block;
+    color: red;
+  }
+  .title{
+    display: inline-block;
+  }
+  .comment{
+    color:red;
+  }
+}
+
+.entry{
+  text-align: center;
+}
+
+table, td, th {
+border: 1px #424242 solid;
+}
+
+.menu-left{
+  color:red;
+}
+}
+
+.family_name{
+  display: inline-block;
+  width: 45%;
+}
+
+.first_name{
+  display: inline-block;
+  width: 45%;
+}
+
+.family_kana{
+  display: inline-block;
+  width: 45%;
+}
+
+.first_kana{
+  display: inline-block;
+  width: 45%;
+}
+
+.tel{
+  input[type="text"] {
+          width: 80%;
+          height: 30px;
+      }
+}
+
+
+.mail{
+input[type="text"] {
+        width: 80%;
+        height: 30px;
+    }
+}
+
+.purpose{
+          width: 100%;
+}
+
+
+.note{
+        width: 100%;
+}
+
+.agreement{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.actions{
+text-align: center;
+}
+// input.submit {
+//   display       : inline-block;
+//   border-radius : 5%;          /* 角丸       */
+//   font-size     : 18pt;        /* 文字サイズ */
+//   text-align    : center;      /* 文字位置   */
+//   cursor        : pointer;     /* カーソル   */
+//   padding       : 12px 12px;   /* 余白       */
+//   background    : #000066;     /* 背景色     */
+//   color         : #ffffff;     /* 文字色     */
+//   line-height   : 1em;         /* 1行の高さ  */
+//   transition    : .3s;         /* なめらか変化 */
+//   box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+//   border        : 2px solid #000066;    /* 枠の指定 */
+// }

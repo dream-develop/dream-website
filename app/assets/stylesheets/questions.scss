@@ -1,3 +1,529 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.questions{
+
+@charset "utf-8";
+/*
+  CSS のみのドロップダウンメニュー
+  Copyright Rectus Inc, 2019
+  https://www.rectus.co.jp/
+ */
+
+/* 基本CSS */
+ul,
+div,
+img {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-weight: normal;
+}
+
+/* 本文をメニューの高さ分下げる */
+#main {
+  margin-top: 60px;
+}
+
+#navi {
+  background-color: #FFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #eb6101;
+}
+/* チェックボックスを非表示 */
+#navi input {
+  display: none;
+}
+/* 左上ロゴ */
+
+.menu-left {
+  float: left;
+  // line-height: 60px;
+  position: absolute;
+  left: 30px;
+  top:12px;
+}
+// .menu-left img {
+//   vertical-align: middle;
+//   margin-left: 10px;
+// }
+/* 上部メニュー */
+.menu {
+  float: right;
+  margin-right: 10px;
+}
+.menu-parent {
+  float: left;
+  margin-right: 30px;
+  line-height: 60px;
+  font-size: 17px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+/* パソコンでは V を非表示 */
+.menu-parent .pd {
+  display: none;
+}
+/* 上部メニューの最後の項目 */
+// .menu-parent:last-child {
+//   margin-right: 0px;
+// }
+
+#menu-navibtn {
+  display: none;
+  cursor: pointer;
+  cursor: hand;
+}
+
+main{
+  margin-top: 60px;
+}
+
+// .meeting_entry
+//     {
+//     position: fixed;
+//     top: 70px;
+//     right: 16px;
+//     background-color: orange;
+//     height: 30px
+//
+//     }
+//
+// .meeting_entry a
+//     {
+//     display: blue;
+//     text-decoration: none;
+//     }
+//
+// .meeting_entry:hover
+// {
+//     opacity: 0.85 ;
+// }
+
+.meeting_entry{
+  display: inline-block;
+  position: fixed;
+  top: 70px;
+  right: 16px;
+  // height: 30px
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+}
+
+.meeting_entry:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+.dream{
+  height: 400px;
+  width:100%;
+  .dream_inner{
+    height: 400px;
+    background-image: url("sky.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    h3{
+      position: absolute;
+      font-family: Oswald, sans-serif;
+      font-size: 40px;
+      top: 40%;
+      left:50%;
+      transform : translate(-50%,-50%);
+      width: 100px;
+      text-align: center;/*一応BOX内の文字も中央寄せ*/
+    }
+  }
+}
+
+#school_introduction{
+  width:100%;
+  height: 400px;
+  background-color: rgb(247, 247, 247);
+  h3{
+    // margin:  0 auto;
+    text-align:center;
+    padding: 10px;
+    text-decoration: underline;
+  }
+}
+
+#philosophy{
+  width:100%;
+  height: 400px;
+  h3{
+    // margin:  0 auto;
+    text-align:center;
+    padding: 10px;
+    text-decoration: underline;
+  }
+}
+
+#teacher{
+  width:100%;
+  height: 600px;
+  // padding: 20px;
+  background-color: rgb(247, 247, 247);
+  h3{
+    // margin:  0 auto;
+    text-align:center;
+    padding: 10px;
+    text-decoration: underline;
+  }
+  .teacher_1{
+    display: flex;
+    .teacher_1_pic{
+      height:250px;
+      width: 40%;
+      position: relative;
+      img {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+        width:  180px;       /* ※縦横を同値に */
+        height: 180px;       /* ※縦横を同値に */
+      }
+    }
+  }
+  .teacher_2{
+    display: flex;
+    .teacher_2_pic{
+      height:250px;
+      width: 40%;
+      position: relative;
+      img {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+        width:  180px;       /* ※縦横を同値に */
+        height: 180px;       /* ※縦横を同値に */
+      }
+    }
+  }
+}
+
+#curriculum{
+  width:100%;
+  height: 400px;
+  h3{
+    // margin:  0 auto;
+    text-align:center;
+    padding: 10px;
+    text-decoration: underline;
+    font-family: 見出ゴMB31;
+  }
+}
+
+
+#question{
+  background-color: rgb(247, 247, 247);
+}
+
+#question h3{
+  text-align:center;
+  padding: 10px;
+  text-decoration: underline;
+  // .actions{
+  // margin: 0 auto;
+  // }
+}
+
+.body{
+  width: 80%;
+  margin: 0 auto;
+  .kome{
+    display: inline-block;
+    color: red;
+  }
+  .title{
+  display: inline-block;
+}
+.comment{
+  color:red;
+}
+}
+
+table, td, th {
+border: 1px #424242 solid;
+}
+
+.family_name{
+  display: inline-block;
+  width: 45%;
+}
+
+.first_name{
+  display: inline-block;
+  width: 45%;
+}
+
+.family_kana{
+  display: inline-block;
+  width: 45%;
+}
+
+.first_kana{
+  display: inline-block;
+  width: 45%;
+}
+
+.tel{
+  input[type="text"] {
+          width: 80%;
+          height: 30px;
+      }
+}
+
+
+.mail{
+input[type="text"] {
+        width: 80%;
+        height: 30px;
+    }
+}
+
+.content{
+          width: 100%;
+}
+
+
+.agreement{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.actions{
+text-align: center;
+}
+
+.backpicture_1{
+  height: 400px;
+  width:100%;
+  .backpicture_1_inner{
+    height: 400px;
+    background-image: url("sky.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+#access{
+  width:100%;
+  height: 400px;
+  h3{
+    // margin:  0 auto;
+    text-align:center;
+    padding: 10px;
+    text-decoration: underline;
+  }
+}
+
+footer{
+  background-color: black;
+  width:100%;
+  height: 50px;
+  position: relative;
+  p{
+    color:white;
+    font-size: 15px;
+    position: absolute;
+    top: 30%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+
+// input[type="text"] {
+//         width: 100px;
+//         height: 40px;
+//     }
+
+
+//////////////////////////////////////////////////////////////////////////
+@media screen and (max-width: 620px) {
+  /* スマホの際に V を表示 */
+  .menu-parent .pd {
+    display: inline-block;
+    width: 100%;
+  }
+  .menu {
+    display: none;
+  }
+  .menu-parent {
+    height: auto;
+    width: 100%;
+    padding: 0px 20px;
+    border-bottom: 1px solid #DDD;
+  }
+  // .menu-parent:first-child {
+  //   border-top: 1px solid #DDD;
+  // }
+  .menu-parent i {
+    padding: 0px 6px;
+  }
+  /* メニューを移動させないため */
+  #menu-navibtn:checked ~ #navi {
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+  }
+}
+
+/* ドロップダウンメニュー */
+.menu-parent {
+  position: relative;
+}
+// .menu-parent .menu-child {
+//   visibility: hidden;
+//   opacity: 0;
+//   position: absolute;
+//   margin-left: -40px;
+//   width: auto;
+//   box-sizing: border-box;
+//   padding: 0px 20px;
+//   background-color: #FFF;
+//   border: 1px solid #000;
+// }
+/* パソコン用 */
+// @media screen and (min-width: 620px) {
+//   .menu-parent:hover .menu-child {
+//     visibility: visible;
+//     opacity: 1;
+//   }
+// }
+/* スマホ用 */
+@media screen and (max-width: 620px) {
+  /* ハンバーガーメニューがクリックされた時 */
+  #menu-navibtn:checked ~ * .menu {
+    display: block;
+    opacity: 1;
+  }
+  #menu-navibtn:checked ~ * .menu-parent {
+    max-height: inherit;
+    overflow-y: visible;
+  }
+  #menu-navibtn:checked ~ * .menu-child {
+    max-height: 0;
+    overflow-y: hidden;
+    visibility: hidden;
+  }
+  /* 子メニュー */
+  // .menu-parent .menu-child {
+  //   border-top: 1px solid #DDD;
+  //   border-left: 1px solid #FFF;
+  //   border-right: 1px solid #FFF;
+  //   border-bottom: 1px solid #FFF;
+  //   position: relative;
+  //   padding: 0 20px;
+  //   opacity: 1;
+  //   top: 0;
+  //   margin-left: auto;
+  //   left: auto;
+  //   width: auto;
+  // }
+  .menu-parent > label:hover {
+    cursor: pointer;
+    cursor: hand;
+  }
+  /* 子メニューがクリックされた時 */
+  // #navi input[type="checkbox"]:checked ~ .menu-child {
+  //   max-height: inherit;
+  //   overflow-y: visible;
+  //   visibility: visible;
+  // }
+	// 	.angletoggle:before {
+	// 			content: "\f107";
+	// 	}
+	// 	#navi input[type="checkbox"]:checked ~ * .angletoggle:before {
+  //   content: "\f106";
+	// 	}
+}
+/* 子メニュー */
+.menu-child li {
+  font-size: 14px;
+  border-bottom: 1px solid #DDD;
+}
+/* 余分な最後の線を消去 */
+.menu-child li:last-child {
+  border: none;
+}
+.menu-child li i {
+  margin-right: 3px;
+}
+
+/* ハンバーガー */
+#navi #navibtn {
+  display: none;
+}
+@media screen and (max-width: 620px) {
+  #navi #navibtn {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  #navibtn span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+  }
+  #navibtn span span {
+    display: block;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+  }
+  #navibtn span span::before,
+  #navibtn span span::after,
+  #navibtn span::after {
+    position: absolute;
+    left:10px;
+    content:"";
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+  }
+  /* 上の棒 */
+  #navibtn span span::before {
+    top:10px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn span span::before {
+    top:19px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  /* 下の棒 */
+  #navibtn span::after {
+    bottom:10px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn > span::after {
+    bottom:18px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  /* 中の棒 */
+  #navibtn span span::after {
+    top:18px;
+  }
+  #menu-navibtn:checked ~ #navi label#navibtn span span::after {
+    display: none;
+  }
+}
+
+}

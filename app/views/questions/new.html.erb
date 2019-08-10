@@ -6,29 +6,141 @@
     <title>dream</title> <!--ブラウザのタブのタイトルを指定-->
   </head>
 
-  <body> <!--ページの見た目を作る部分-->
-    <header class="header-nav">
+  <body>
+    <header>
+      <input type="checkbox" id="menu-navibtn" />
+      <nav id="navi" role="navigation" aria-label="メインメニュー">
+        <div>
+          <label id="navibtn" for="menu-navibtn">
+            <span>
+              <span>メニューを開く</span>
+            </span>
+          </label>
+          <div class="menu-left"><h3>Dream</h3></div>
+          <!-- <div class="menu-left"><a href="/"><span class="companylogo"><img src="/images/title.png"></span></a></div> -->
+          <ul class="menu">
+            <li class="menu-parent">
+              <%= link_to "about",:controller=>"questions",:action=>"new", :anchor => "school_introduction"%>
+              <input type="checkbox" id="menu-parent01"/>
+              <label for="menu-parent01">
+                <span class="ib pd"><i class="fas angletoggle"></i></span>
+              </label>
+              <!-- <ul class="menu-child">
+                <li class="menu-child-top"><a href="/service/hpconsult.html">ホームページ制作＆コンサル</a></li>
+                <li><a href="/service/hpaccesslog.html">アクセスログ解析</a></li>
+                <li><a href="/service/hpmainte.html">ホームページメンテナンス</a></li>
+                <li><a href="/service/hpstudy.html">ホームページ勉強会</a></li>
+                <li><a href="/service/product.html">商品企画コンサルティング</a></li>
+                <li><a href="/service/sales.html">営業コンサルティング</a></li>
+              </ul> -->
+            </li>
+            <li class="menu-parent">
+              <%= link_to "カリキュラム",:controller=>"questions",:action=>"new", :anchor => "curriculum"%>
+              <!-- <a class="ib" href="/colume/">コラム</a> -->
+              <input type="checkbox" id="menu-parent02"/>
+              <label for="menu-parent02">
+                <span class="ib pd"><i class="fas angletoggle"></i></span>
+              </label>
+              <!-- <ul class="menu-child">
+                <li class="menu-child-top"><a href="/column/book-hp.html">書籍発売のご案内</a></li>
+                <li><a href="/column/sales.html">効率のよい営業とは</a></li>
+                <li><a href="/column/failure.html">失注の原因分析</a></li>
+                <li><a href="/column/processmanagement.html">プロセスマネジメント</a></li>
+                <li><a href="/column/managesales.html">営業管理とは</a></li>
+              </ul> -->
+            </li>
+            <li class="menu-parent">
+              <%= link_to "問い合わせ",:controller=>"questions",:action=>"new", :anchor => "question"%>
+              <!-- <a class="ib" href="/tool/">ツール</a> -->
+              <input type="checkbox" id="menu-parent03"/>
+              <label for="menu-parent03">
+                <span class="ib pd"><i class="fas angletoggle"></i></span>
+              </label>
+              <!-- <ul class="menu-child">
+                <li class="menu-child-top"><a href="/tool/morphurl.html">単語出現頻度ランキング</a></li>
+                <li><a href="/tool/similarpage.html">類似ページ検索</a></li>
+                <li><a href="/tool/thesaurus.html">類語(類義語)辞書(シソーラス)</a></li>
+              </ul> -->
+            </li>
+            <li class="menu-parent">
+              <%= link_to "Access",:controller=>"questions",:action=>"new", :anchor => "access"%>
+              <!-- <a class="ib" href="/company/">レクタスとは</a> -->
+              <input type="checkbox" id="menu-parent04" />
+              <label for="menu-parent04">
+                <span class="ib pd"><i class="fas angletoggle"></i></span>
+              </label>
+              <!-- <ul class="menu-child">
+                <li class="menu-child-top"><a href="/company/privacy.html">個人情報保護方針</a></li>
+              </ul> -->
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <section class="school_introduction">
-    </<section>
 
-      <section class="">
-      </<section>
+    <main>
+      <div class="meeting_entry">
+        <%= link_to "説明会予約",:controller=>"meeting_entries",:action=>"new", :anchor => "entry"%>
+      </div>
 
-        <section class="about">
-        </<section>
+      <section class="dream">
+        <div class="dream_inner">
+          <h3>Dream</h3>
+        </div>
+      </section>
 
-          <section class="about">
-          </<section>
+      <section id="school_introduction">
+        <h3>学校紹介</h3>
+      </section>
 
-            <section class="about">
-              <h1>問い合わせ</h1>
+      <section id="philosophy">
+        <h3>教育理念</h3>
+      </section>
 
-              <%= render 'form', question: @question %>
 
-              <%= link_to 'Back', questions_path %>
-            </<section>
+      <section id="teacher">
+        <h3>講師</h3>
+        <div class="teacher_1">
+          <div class="teacher_1_pic">
+            <%= image_tag 'llama.jpg' %>
+          </div>
+          <div class="teacher_1_intro">
+            <p>井上仁</p>
+          </div>
+        </div>
+        <div class="teacher_2">
+          <div class="teacher_2_pic">
+            <%= image_tag 'llama.jpg' %>
+          </div>
+          <div class="teacher_2_intro">
+            <p>井上太</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="curriculum">
+        <h3>カリキュラム</h3>
+      </section>
+
+      <section id="question">
+        <h3>お問い合わせ</h3>
+
+        <%= render 'form', question: @question %>
+
+        <%# <%= link_to 'Back', questions_path %>
+      </section>
+
+      <section class="backpicture_1">
+        <div class="backpicture_1_inner">
+        </div>
+      </section>
+
+      <section id="access">
+        <h3>アクセス</h3>
+      </section>
+
+    </main>
 
 
 

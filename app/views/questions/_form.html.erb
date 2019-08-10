@@ -11,49 +11,97 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :名字 %>
-    <%= form.text_field :family_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :kana %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :family_kana %>
-    <%= form.text_field :family_kana %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_kana %>
-    <%= form.text_field :first_kana %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%# <%= form.label :agreement %> %>
-    <%# <%= link_to 'new', questions_path %> %>
-    <%= link_to 'agreement', questions_approval_path %>
-    <%= form.check_box :agreement %>
-  </div>
+ <div class="body">
+   <p class="comment">※は必須項目です。必ずチェックまたはご記入ください。</p>
+  <table>
+    <tbody>
+      <tr>
+         <th>
+          <p class="kome">※</p>
+          <p class="title">お名前</p>
+         </th>
+        <td>
+          <div class="family_name">
+            <%= form.label :　姓 %>
+            <%= form.text_field :family_name %>
+          </div>
+          <div class="first_name">
+            <%= form.label :　名 %>
+            <%= form.text_field :first_name %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">フリガナ</p>
+        </th>
+         <td>
+          <div class="family_kana">
+            <%= form.label :セイ %>
+            <%= form.text_field :family_kana %>
+          </div>
+          <div class="first_kana">
+            <%= form.label :メイ %>
+            <%= form.text_field :first_kana %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">ご連絡先TEL(半角数字)</p>
+        </th>
+        <td>
+          <div class="tel">
+            <%= form.label :　　 %>
+            <%= form.text_field :phone %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">メールアドレス</p>
+        </th>
+        <td>
+          <div class="mail">
+            <%= form.label :　　 %>
+            <%= form.text_field :email %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">聞きたい内容</p>
+        </th>
+        <td>
+          <div class="content">
+            <%= form.label :content %>
+            <%= form.text_area :content %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <p class="kome">※</p>
+          <p class="title">利用規約</p>
+        </th>
+        <td>
+          <div class="agreement">
+            <%# <%= form.label :agreement %>
+            <%# <%= link_to 'new', questions_path %>
+            <%= link_to '利用規約の確認', questions_agreement_path %>
+            <%= form.check_box :agreement %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "送信"%>
   </div>
+</div>
 <% end %>

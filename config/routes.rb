@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'questions/approval' =>'questions#approval'
-  get '/meeting_entries/approval' =>'meeting_entries#approval'
+  get 'questions/agreement' =>'questions#agreement'
+  get '/meeting_entries/agreement' =>'meeting_entries#agreement'
 
 
   resources :meeting_entries

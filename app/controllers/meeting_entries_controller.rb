@@ -7,7 +7,7 @@ class MeetingEntriesController < ApplicationController
     @meeting_entries = MeetingEntry.all
   end
 
-  def approval
+  def agreement
   end
 
 
