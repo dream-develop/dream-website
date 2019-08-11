@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
   end
 
   def complete
+    # @questions = Question.all
   end
 
   def agreement
@@ -34,7 +35,8 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        # format.html { redirect_to action: "complete", notice: 'Question was successfully created.' }
+        format.html { redirect_to @question, notice: '送信が完了しました' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }

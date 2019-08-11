@@ -33,6 +33,7 @@ img {
   height: 60px;
   width: 100%;
   border-bottom: 1px solid #eb6101;
+   z-index: 100;
 }
 /* チェックボックスを非表示 */
 #navi input {
@@ -42,15 +43,17 @@ img {
 
 .menu-left {
   float: left;
-  // line-height: 60px;
-  position: absolute;
-  left: 30px;
-  top:12px;
+  line-height: 60px;
+  h3 {
+    // vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  // position: absolute;
+  // left: 30px;
+  // top:12px;
 }
-// .menu-left img {
-//   vertical-align: middle;
-//   margin-left: 10px;
-// }
+
 /* 上部メニュー */
 .menu {
   float: right;
@@ -130,17 +133,18 @@ main{
     background-image: url("sky.jpg");
     background-size: cover;
     background-position: center center;
-    position: relative;
-    h3{
-      position: absolute;
-      font-family: Oswald, sans-serif;
-      font-size: 40px;
-      top: 40%;
-      left:50%;
-      transform : translate(-50%,-50%);
-      width: 100px;
-      text-align: center;/*一応BOX内の文字も中央寄せ*/
-    }
+    // position: relative;
+  }
+  h3{
+    position: absolute;
+    font-family: Oswald, sans-serif;
+    font-size: 40px;
+    top: 40%;
+    left:50%;
+    transform : translate(-50%,-50%);
+    width: 100px;
+    text-align: center;/*一応BOX内の文字も中央寄せ*/
+     z-index: 30;
   }
 }
 

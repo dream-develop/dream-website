@@ -23,39 +23,13 @@
         </th>
         <td>
           <div class="date">
-            <% if @meetings[0]['status'] == 10 %>
-              <label><%= check_box "temp", "@meetings[0]['datetime']" %><%= @meetings[0]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
-            <% else %>
-              <label><%= check_box "temp", "@meetings[0]['datetime']" , :disabled => true, :checked_value => "true", :unchecked_value => "false"%><del><%= @meetings[0]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
-            <% end %>
-            <br>
-
-
-            <% if @meetings[1]['status'] == 10 %>
-              <label><%= check_box "temp", "@meetings[1]['datetime']" %><%= @meetings[1]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
-            <% else %>
-              <label><%= check_box "temp", "@meetings[1]['datetime']" , :disabled => true%><del><%= @meetings[1]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
-            <% end %>
-            <br>
-
-            <% if @meetings[2]['status'] == 10 %>
-              <label><%= check_box "temp", "@meetings[2]['datetime']" %><%= @meetings[2]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
-            <% else %>
-              <label><%= check_box "temp", "@meetings[2]['datetime']" , :disabled => true%><del><%= @meetings[2]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
-            <% end %>
-            <br>
-
-            <% if @meetings[3]['status'] == 10 %>
-              <label><%= check_box "temp", "@meetings[3]['datetime']" %><%= @meetings[3]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
-            <% else %>
-              <label><%= check_box "temp", "@meetings[3]['datetime']" , :disabled => true%><del><%= @meetings[3]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
-            <% end %>
-            <br>
-
-            <% if @meetings[4]['status'] == 10 %>
-              <label><%= check_box "temp", "@meetings[4]['datetime']" %><%= @meetings[4]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
-            <% else %>
-              <label><%= check_box "temp", "@meetings[4]['datetime']" , :disabled => true%><del><%= @meetings[4]['datetime'].strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
+            <% @meetings.each do |t|  %>
+              <% if t.status == 10 %>
+                <label><%= check_box "temp",t.id%><%= t.datetime.strftime("%Y年%-m月%-d日 %-H時%-M分")%></label>
+              <% else %>
+                <label><%= check_box "temp",t.id, :disabled => true%><del><%= t.datetime.strftime("%Y年%-m月%-d日 %-H時%-M分")%></del></label>
+              <% end %>
+              <br>
             <% end %>
             <br>
           </div>

@@ -36,31 +36,37 @@ class MeetingEntriesController < ApplicationController
 
   # POST /meeting_entries
   # POST /meeting_entries.json
+
+
+
   def create
     @meeting_entry = MeetingEntry.new(meeting_entry_params)
-    # params:[gamelist]で配列の値を取得可能。
-    # 二次元配列の場合、受取先の変数を2つ宣言する。下記例では、
-    # di1がタイトル、di2がチェックボックスの状態(0 or 1)が格納される。
     params[:temp].each do | di1,di2 |
-
-      # チェックボックスにチェックがついている場合
-      if di2 == "1"
+    # チェックボックスにチェックがついている場合
+      if di2== "1"
         # DBのtitleカラムにタイトルを格納し保存
-        @meeting_entry = MeetingEntry.new(meeting_id:di1)
+        # @meeting_entry = MeetingEntry.new(meeting_id:di1)
+        @meeting_entry = MeetingEntry.new(meeting_entry_params)
+        @meeting_entry[:meeting_id] = di1
         @meeting_entry.save
       end
+
+       # binding.pry
     end
 
     respond_to do |format|
       if @meeting_entry.save
         format.html { redirect_to @meeting_entry, notice: 'Meeting entry was successfully created.' }
+        # format.html { redirect_to action: "complete", notice: 'Meeting entry was successfully created.' }
         format.json { render :show, status: :created, location: @meeting_entry }
       else
+        @meetings = Meeting.all
         format.html { render :new }
         format.json { render json: @meeting_entry.errors, status: :unprocessable_entity }
       end
     end
   end
+
 
   # PATCH/PUT /meeting_entries/1
   # PATCH/PUT /meeting_entries/1.json

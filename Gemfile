@@ -65,3 +65,12 @@ gem 'devise'
 gem 'validates_email_format_of'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+end
+
+gem 'gmaps4rails'  # railsでGoogle mapを使えるようにする
+gem 'geocoder'     # 地名から緯度経度を引けるようにする
